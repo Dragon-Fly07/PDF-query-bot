@@ -3,3 +3,4 @@ langchain-community==0.3.23
 faiss-cpu==1.11.0
 pdfplumber==0.11.6
 streamlit==1.45.0
+python-dotenv==1.1.0
