@@ -1,7 +1,7 @@
 import streamlit as st
 from backend import get_data, query_agent
 
-st.title("PDF Answer Generator")
+st.title("PDF Query Bot")
 st.divider()
 st.text("Upload a PDF and ask a question related to the PDF. Click on \"Generate\" to get the answer")
 
