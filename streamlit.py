@@ -11,7 +11,7 @@ slider = 0
 with st.form("input"):
     path = st.text_input("File Path")
     query = st.text_area("Query")
-    slider = st.select_slider("Marks", options=[2, 4, 6, 8, 12])
+    slider = st.select_slider("Points", options=list(range(1, 100)))
     submit = st.form_submit_button("Generate")
 
 
