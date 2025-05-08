@@ -34,19 +34,11 @@ query_agent: Takes the databases, performs a search based on query and then pass
     - db: vector store
 """
 
-def query_agent(query: str, marks: int, db:FAISS) -> str | None:
+def query_agent(query: str, points: int, db:FAISS) -> str | None:
     if db is None:
         return 
 
-    marker = {
-        2 : 5,
-        4 : 7,
-        6 : 9,
-        8 : 13,
-        12: 15
-    }
-    k = marker[marks]
-    pages = db.similarity_search(query, k)
+    pages = db.similarity_search(query, points)
     data = " ".join([d.page_content for d in pages])
 
     llm = GoogleGenerativeAI(model="gemini-2.0-flash")
