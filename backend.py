@@ -42,7 +42,7 @@ def query_agent(query: str, points: int, db:FAISS) -> str | None:
     data = " ".join([d.page_content for d in pages])
 
     llm = GoogleGenerativeAI(model="gemini-2.0-flash")
-    prompt = PromptTemplate(input_variables=["query", data], template="You are an expert in the field of ancirent Tamil technology. You are given the documents {data} on certain topics pertaining to your field. You job is to be helpful and take in questions and answer them to the highest accuracy possible. If you feel you do not know the answer to a question, say \"I don't know\". With those documents as context, answer {query}.")
+    prompt = PromptTemplate(input_variables=["query", data], template="You are an expert in reading PDF documents and providing answers to them. You are given the documents {data} on certain topics pertaining to your field. You job is to be helpful and take in questions and answer them to the highest accuracy possible. If you feel you do not know the answer to a question, say \"I don't know\". With those documents as context, answer {query}.")
     chain = prompt | llm
     response = chain.invoke(input = {"query" : query, "data" : data})
     return response
