@@ -18,4 +18,5 @@ with st.form("input"):
 db = get_data(path)
 answer = query_agent(query, slider, db)
 if answer is not None:
-    st.markdown(answer)
+    print(answer)
+    st.write(answer)
