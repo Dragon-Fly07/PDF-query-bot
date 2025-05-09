@@ -46,4 +46,3 @@ def query_agent(query: str, points: int, db:FAISS) -> str | None:
     chain = prompt | llm
     response = chain.invoke(input = {"query" : query, "data" : data})
     return response
-
