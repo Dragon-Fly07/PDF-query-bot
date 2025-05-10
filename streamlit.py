@@ -15,6 +15,9 @@ with st.form("input"):
     submit = st.form_submit_button("Generate")
 
 
+st.subheader("Output")
+st.divider()
+
 db = get_data(path)
 answer = query_agent(query, slider, db)
 if answer is not None:
